@@ -1,0 +1,134 @@
+/* Container styles */
+.container {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title styling */
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Filter dropdown */
+.filterContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active card state */
+.card.active {
+  background-color: #c5e1a5;
+  color: #1b5e20;
+}
+
+/* Card header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  transition: transform 0.3s;
+}
+
+.card.active .icon {
+  transform: rotate(180deg);
+}
+
+/* Tooltip */
+.tooltip {
+  display: none;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.card:hover .tooltip {
+  display: block;
+}
+
+/* Details styles */
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s;
+  opacity: 0;
+}
+
+.detailsExpanded {
+  max-height: 500px; /* Adjust max-height for longer content */
+  opacity: 1;
+}
+
+/* List items */
+.detailItem {
+  list-style-type: none;
+  padding: 5px 0;
+  color: #555;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: calc(var(--order) * 0.1s);
+}
+
+/* Animation for staggered list items */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .details li {
+    font-size: 0.9rem;
+  }
+}

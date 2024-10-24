@@ -1,0 +1,100 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0073e6; /* Customize the color */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+
+/* Mobile menu links hidden by default */
+.navLinks.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #0073e6;
+  padding: 20px;
+}
+
+/* Link styles */
+.navLinks li {
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.navLinks a:hover {
+  background-color: #005bb5;
+  color: #f0f0f0;
+}
+
+/* Hamburger Menu for mobile view */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Hamburger bars */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* When the mobile menu is active */
+.barActive {
+  background-color: #f0f0f0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide by default on mobile */
+  }
+
+  /* Show the hamburger menu */
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Responsive design for mobile links */
+@media (max-width: 480px) {
+  .navLinks li {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}

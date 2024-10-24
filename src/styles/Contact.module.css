@@ -1,0 +1,84 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.contactInfo {
+  display: none; /* Hidden by default for smaller screens */
+  transition: all 0.3s ease-in-out;
+}
+
+.contactInfo.expanded {
+  display: block; /* Show when expanded */
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #004999;
+  text-decoration: underline;
+}
+
+/* Toggle Button */
+.toggleButton {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0;
+  display: none; /* Hidden on larger screens */
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.socialLinks a {
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+
+.socialLinks a:hover {
+  color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .toggleButton {
+    display: inline-block; /* Visible on smaller screens */
+  }
+
+  .contactInfo {
+    display: none; /* Default hidden for small screens */
+  }
+
+  .contactInfo.expanded {
+    display: block; /* Show expanded info on click */
+  }
+}

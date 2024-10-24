@@ -1,0 +1,77 @@
+/* Container for the entire offerings section */
+.container {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Section title */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grid container for the offering cards */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Expanded card state */
+.card.active {
+  background-color: #e0f7fa;
+}
+
+/* Card title */
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #00796b;
+}
+
+/* Card description */
+.description {
+  color: #555;
+  transition: max-height 0.3s ease;
+  max-height: 3em; /* Collapsed height */
+  overflow: hidden;
+}
+
+/* Expanded description state */
+.descriptionExpanded {
+  max-height: 100em; /* Allows full expansion */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
