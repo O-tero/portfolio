@@ -13,7 +13,7 @@ const Home = () => {
       <h1 className={styles.heading}>About Me</h1>
       <div className={styles.profileContainer}>
         <img
-          src="/assets/profile.jpeg"
+          src="/assests/profile.jpeg"
           alt="Jesse David"
           className={styles.profileImage}
           onMouseEnter={(e) => handleImageHover(e, true)}

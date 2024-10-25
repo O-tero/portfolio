@@ -8,6 +8,7 @@ import Initiatives from './components/Initiatives';
 import Offerings from './components/Offerings';
 import RateCard from './components/RateCard';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './styles/App.module.css';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/rate-card" element={<RateCard />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

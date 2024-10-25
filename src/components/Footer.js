@@ -24,25 +24,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer}>
-      <p>&copy; 2024 Jesse David. All Rights Reserved.</p>
-      <div className={styles.socialLinks}>
-        <a href="http://linkedin.com/in/jesse-david-j" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a href="https://instagram.com/jesse_david_j" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-        <a href="https://twitter.com/jesse_david_j" target="_blank" rel="noopener noreferrer">
-          Twitter
-        </a>
-      </div>
+    <footer className={`${styles.footer} ${styles.stickyFooter}`}>
+      <div className={styles.footerContent}>
+        <p>&copy; 2024 Jesse David. All Rights Reserved.</p>
+        <div className={styles.socialLinks}>
+          <a href="http://linkedin.com/in/jesse-david-j" target="_blank" rel="noopener noreferrer">
+            <i className="fa fa-linkedin"></i> LinkedIn
 
-      {showBackToTop && (
-        <button className={styles.backToTop} onClick={scrollToTop}>
-          ↑ Back to Top
-        </button>
-      )}
+          </a>
+          <a href="https://instagram.com/jesse_david_j" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+          <a href="https://twitter.com/jesse_david_j" target="_blank" rel="noopener noreferrer">
+            Twitter
+          </a>
+        </div>
+
+        {showBackToTop && (
+          <button className={styles.backToTop} onClick={scrollToTop}>
+            ↑ Back to Top
+          </button>
+        )}
+      </div>
     </footer>
   );
 };
