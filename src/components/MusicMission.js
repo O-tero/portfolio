@@ -11,7 +11,6 @@ import image7 from '../assets/image7.jpg';
 import image8 from '../assets/image8.jpeg';
 import image9 from '../assets/image9.jpg';
 
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   show: {
@@ -76,7 +75,6 @@ const MusicMission = () => {
           <motion.img src={image7} alt="Music event 7" className={styles.image} variants={fadeInUp} />
           <motion.img src={image8} alt="Music event 8" className={styles.image} variants={fadeInUp} />
           <motion.img src={image9} alt="Music event 9" className={styles.image} variants={fadeInUp} />
-
         </div>
         <button onClick={scrollRight} className={styles.scrollButton}>&gt;</button>
       </div>

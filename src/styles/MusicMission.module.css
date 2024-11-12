@@ -1,10 +1,10 @@
 /* Container styles */
 .container {
   position: relative;
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 60px 20px;
-  background-color: rgba(244, 244, 244, 0.9);
+  padding: 40px 20px;
+  background-color: rgba(244, 244, 244, 0.95);
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -12,15 +12,15 @@
 
 /* Heading styles */
 .heading {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #0073e6;
   margin-bottom: 20px;
-  transition: color 0.3s ease;
+  text-align: center;
 }
 
 /* Text styles */
 .text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #333;
   text-align: justify;
@@ -29,18 +29,17 @@
 
 /* Image scroll container */
 .imageScrollContainer {
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 2rem;
 }
 
 /* Scroll button styles */
 .scrollButton {
-  background-color: #0073e6;
-  color: #fff;
+  background: none;
   border: none;
-  border-radius: 50%;
+  color: #555;
   width: 35px;
   height: 35px;
   font-size: 1.5rem;
@@ -48,27 +47,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .scrollButton:hover {
-  background-color: #005bb5;
+  color: #333;
 }
 
 /* Horizontal scrolling container for images */
 .imageContainer {
   display: flex;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 /* Individual image styling */
 .image {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -76,32 +76,32 @@
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .container {
-    padding: 30px 15px;
+    padding: 20px 10px;
   }
 
-  .heading {
-    font-size: 2rem;
-  }
-
-  .text {
-    font-size: 1rem;
-  }
-
-  .image {
-    width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
   .heading {
     font-size: 1.8rem;
   }
 
   .text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .image {
-    width: 100px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    font-size: 0.85rem;
+  }
+
+  .image {
+    width: 150px;
   }
 }
