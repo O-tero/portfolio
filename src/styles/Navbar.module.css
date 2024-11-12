@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px; /* Adjusted padding for tighter layout */
+  padding: 10px 15px; /* Adjusted padding for smaller screens */
   background-color: #0073e6;
   color: white;
   position: sticky;
@@ -14,7 +14,7 @@
 
 /* Logo */
 .logo {
-  font-size: 1.4rem; /* Slightly reduced size */
+  font-size: 1.2rem; /* Reduced size for mobile */
   font-weight: bold;
 }
 
@@ -22,11 +22,11 @@
 .navLinks {
   display: flex;
   list-style: none;
-  gap: 15px; /* Reduced gap between links */
-  transition: all 0.5s ease;
+  gap: 12px; /* Reduced gap for tighter layout */
+  transition: all 0.3s ease;
 }
 
-/* Mobile menu links hidden by default */
+/* Hide the navigation links by default on mobile */
 .navLinks.active {
   display: flex;
   flex-direction: column;
@@ -35,19 +35,19 @@
   left: 0;
   width: 100%;
   background-color: #0073e6;
-  padding: 20px;
+  padding: 10px;
+  gap: 10px;
 }
 
 /* Link styles */
 .navLinks li {
   font-size: 1rem;
-  margin: 0 5px; /* Reduced margin for tighter spacing */
 }
 
 .navLinks a {
   color: white;
   text-decoration: none;
-  padding: 6px 10px; /* Reduced padding for tighter link appearance */
+  padding: 5px 8px; /* Smaller padding for mobile */
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -63,7 +63,7 @@
   display: none;
   cursor: pointer;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 /* Hamburger bars */
@@ -79,22 +79,41 @@
   background-color: #f0f0f0;
 }
 
+/* Mobile Menu Container */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #0073e6;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenu.open {
+  display: flex;
+}
+
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .navLinks {
-    display: none;
+    display: none; /* Hide desktop nav links on mobile */
   }
 
-  /* Show the hamburger menu */
   .hamburger {
-    display: flex;
+    display: flex; /* Show hamburger menu */
   }
 }
 
-/* Responsive design for mobile links */
 @media (max-width: 480px) {
-  .navLinks li {
-    font-size: 0.9rem;
-    text-align: center;
+  .navLinks.active {
+    font-size: 0.9rem; /* Smaller font on extra small screens */
+  }
+
+  .logo {
+    font-size: 1rem;
   }
 }
