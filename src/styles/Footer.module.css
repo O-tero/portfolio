@@ -1,12 +1,22 @@
+/* Footer Styles */
 .footer {
   background-color: #d1cbcb;
   color: #f1f1f1;
   padding: 20px;
   text-align: center;
-  position: relative;
   border-top: 3px solid #0073e6;
+  width: 100%;
 }
 
+/* Force footer to stay at bottom */
+.stickyFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Social Links */
 .socialLinks {
   margin-top: 10px;
   display: flex;
@@ -26,6 +36,7 @@
   transform: scale(1.1);
 }
 
+/* Back to Top Button */
 .backToTop {
   position: fixed;
   bottom: 40px;
@@ -44,6 +55,17 @@
 .backToTop:hover {
   background-color: #005bb5;
   transform: translateY(-5px);
+}
+
+/* Layout Container for Sticky Footer */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make page full height */
+}
+
+.contentWrapper {
+  flex: 1; /* Push footer to bottom */
 }
 
 /* Media Queries for Responsiveness */
