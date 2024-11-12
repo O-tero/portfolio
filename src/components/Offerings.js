@@ -27,7 +27,6 @@ const offeringsData = [
 const Offerings = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Function to toggle the expanded card
   const toggleCard = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -43,7 +42,7 @@ const Offerings = () => {
             onClick={() => toggleCard(index)}
           >
             <h3>{offering.title}</h3>
-            <p className={activeIndex === index ? styles.descriptionExpanded : styles.description}>
+            <p className={`${styles.description} ${activeIndex === index ? styles.descriptionExpanded : ''}`}>
               {offering.description}
             </p>
           </div>

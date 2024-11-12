@@ -3,26 +3,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px; /* Adjusted padding for tighter layout */
-  background-color: #0073e6;
+  padding: 15px 30px;
+  background-color: #0073e6; /* Customize the color */
   color: white;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo */
 .logo {
-  font-size: 1.4rem; /* Slightly reduced size */
+  font-size: 1.5rem;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #e6f3ff;
 }
 
 /* Navigation Links */
 .navLinks {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 15px; /* Reduced gap between links */
+  gap: 20px;
   transition: all 0.5s ease;
 }
 
@@ -41,60 +54,112 @@
 /* Link styles */
 .navLinks li {
   font-size: 1rem;
-  margin: 0 5px; /* Reduced margin for tighter spacing */
+  margin: 0 10px;
 }
 
 .navLinks a {
   color: white;
   text-decoration: none;
-  padding: 6px 10px; /* Reduced padding for tighter link appearance */
+  padding: 8px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hover effect */
 .navLinks a:hover {
-  background-color: #005bb5;
-  color: #f0f0f0;
+  background-color: #0056b3;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 
-/* Hamburger Menu for mobile view */
-.hamburger {
+/* Active link style */
+.navLinks a.active {
+  background-color: #004080;
+  color: #ffffff;
+}
+
+/* Hamburger menu button */
+.menuButton {
   display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
   cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
 }
 
-/* Hamburger bars */
-.bar {
-  width: 25px;
-  height: 3px;
+/* Sidepanel menu */
+.sidepanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
   background-color: white;
-  transition: all 0.3s ease;
+  overflow-x: hidden;
+  transition: width 0.5s;
+  padding-top: 60px;
 }
 
-/* When the mobile menu is active */
-.barActive {
-  background-color: #f0f0f0;
+/* Mobile menu styles */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  transition: width 0.5s ease;
 }
 
-/* Media Queries for responsiveness */
+.mobileMenu.open {
+  width: 250px; /* Adjust as needed */
+}
+
+.mobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.mobileNavLinks li {
+  padding: 15px 0;
+}
+
+.mobileNavLinks a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .navLinks {
     display: none;
   }
 
-  /* Show the hamburger menu */
-  .hamburger {
-    display: flex;
+  .menuButton {
+    display: block;
   }
-}
 
-/* Responsive design for mobile links */
-@media (max-width: 480px) {
-  .navLinks li {
-    font-size: 0.9rem;
-    text-align: center;
+  .mobileNavLinks a:hover {
+    text-decoration: none;
   }
 }

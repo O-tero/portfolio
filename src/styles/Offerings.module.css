@@ -55,14 +55,16 @@ h2 {
 /* Card description */
 .description {
   color: #555;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   max-height: 3em; /* Collapsed height */
   overflow: hidden;
+  opacity: 0.7;
 }
 
 /* Expanded description state */
 .descriptionExpanded {
   max-height: 100em; /* Allows full expansion */
+  opacity: 1;
 }
 
 /* Responsive adjustments */
