@@ -3,8 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: #0073e6; /* Customize the color */
+  padding: 15px 20px; /* Adjusted padding for tighter layout */
+  background-color: #0073e6;
   color: white;
   position: sticky;
   top: 0;
@@ -14,7 +14,7 @@
 
 /* Logo */
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Slightly reduced size */
   font-weight: bold;
 }
 
@@ -22,7 +22,7 @@
 .navLinks {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 15px; /* Reduced gap between links */
   transition: all 0.5s ease;
 }
 
@@ -41,13 +41,13 @@
 /* Link styles */
 .navLinks li {
   font-size: 1rem;
-  margin: 0 10px;
+  margin: 0 5px; /* Reduced margin for tighter spacing */
 }
 
 .navLinks a {
   color: white;
   text-decoration: none;
-  padding: 8px 15px;
+  padding: 6px 10px; /* Reduced padding for tighter link appearance */
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -82,7 +82,7 @@
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .navLinks {
-    display: none; /* Hide by default on mobile */
+    display: none;
   }
 
   /* Show the hamburger menu */

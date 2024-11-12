@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/Home.module.css';
+import profileImage from '../assets/profile.jpeg'; // Import the image from src/assets
 
 const Home = () => {
   // Hover effect handler to change image style dynamically
@@ -13,7 +14,7 @@ const Home = () => {
       <h1 className={styles.heading}>About Me</h1>
       <div className={styles.profileContainer}>
         <img
-          src="/assets/profile.jpeg"
+          src={profileImage} // Use the imported image
           alt="Jesse David"
           className={styles.profileImage}
           onMouseEnter={(e) => handleImageHover(e, true)}
