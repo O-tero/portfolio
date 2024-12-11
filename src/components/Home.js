@@ -1,28 +1,41 @@
 import React from 'react';
+import Slider from 'react-slick'; // Import the react-slick slider
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
-import profileImage from '../assets/profile.jpeg'; // Import the image from src/assets
+import profileImage from '../assets/profile.jpeg';
+import image2 from '../assets/image2.jpg';
+import image3 from '../assets/image3.jpg';
+import image5 from '../assets/image5.jpg';
 
 const Home = () => {
-  // Hover effect handler to change image style dynamically
-  const handleImageHover = (event, isHovering) => {
-    event.target.style.transform = isHovering ? 'scale(1.1)' : 'scale(1)';
-    event.target.style.transition = 'transform 0.3s ease';
+  const images = [profileImage, image2, image3, image5]; // Array of image sources
+
+  const sliderSettings = {
+    dots: true, // Enable navigation dots
+    infinite: true, // Infinite scrolling
+    speed: 500, // Transition speed
+    slidesToShow: 1, // Show one slide at a time
+    slidesToScroll: 1, // Scroll one slide at a time
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 3000, // Time between transitions in ms
+    pauseOnHover: true, // Pause autoplay on hover
   };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>About Me</h1>
-      <div className={styles.profileContainer}>
-        <img
-          src={profileImage} // Use the imported image
-          alt="Jesse David"
-          className={styles.profileImage}
-          onMouseEnter={(e) => handleImageHover(e, true)}
-          onMouseLeave={(e) => handleImageHover(e, false)}
-        />
+      <div className={styles.sliderContainer}>
+        <Slider {...sliderSettings}>
+          {images.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`Slide ${index}`} className={styles.sliderImage} />
+            </div>
+          ))}
+        </Slider>
       </div>
       <p className={styles.description}>
-        I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024. 
+        I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024.
         I blend my passion for environmental justice with the power of music to inspire change.
         My music is a tool for impact, bridging the gap between art and activism, and serving
         as an anthem for the voices of frontline communities affected by the climate crisis.

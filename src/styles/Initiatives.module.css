@@ -107,4 +107,15 @@
   .card p {
     font-size: 0.95rem;
   }
+  .link {
+    color: #007bff;
+    text-decoration: underline;
+    margin-top: 8px;
+    display: inline-block;
+  }
+  
+  .link:hover {
+    color: #0056b3;
+    text-decoration: none;
+  }  
 }

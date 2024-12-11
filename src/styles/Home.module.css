@@ -27,28 +27,6 @@
   animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Container for profile image */
-.profileContainer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-/* Profile image styles with hover effect */
-.profileImage {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.profileImage:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
-}
-
 /* Description paragraph styling */
 .description {
   font-size: 1.2rem;
@@ -57,6 +35,40 @@
   max-width: 800px;
   margin: 0 auto;
   animation: fadeIn 1.4s ease-in-out;
+}
+
+/* Container for the slider */
+.sliderContainer {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden; /* Ensures no extra space outside the slider */
+}
+
+/* Slider image styles - set to icon size */
+.sliderImage {
+  width: 150px; /* Set the image width to 150px */
+  height: 150px; /* Set the image height to 150px */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio while fitting the size */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* New container for images between About Me and Info sections */
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Icon image styles */
+.iconImage {
+  width: 80px; /* Set the image width to 50px (icon size) */
+  height: 80px; /* Set the image height to 50px (icon size) */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+  border-radius: 50%; /* Round the images to make them look like icons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries for Responsiveness */
@@ -69,13 +81,20 @@
     font-size: 2rem;
   }
 
-  .profileImage {
-    width: 140px;
-    height: 140px;
-  }
-
   .description {
     font-size: 1rem;
     padding: 0 15px;
+  }
+
+  /* Slider image size on smaller screens */
+  .sliderImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Icon image size on smaller screens */
+  .iconImage {
+    width: 50px;
+    height: 50px;
   }
 }
