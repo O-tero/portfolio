@@ -30,7 +30,7 @@ p {
 }
 
 a {
-  color: #0066cc;
+  color: #808080;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -42,7 +42,7 @@ a:hover {
 
 /* Toggle Button */
 .toggleButton {
-  background-color: #0066cc;
+  background-color: #808080;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -66,7 +66,7 @@ a:hover {
 }
 
 .socialLinks a:hover {
-  color: #0056b3;
+  color: #808080;
   transform: scale(1.1);
 }
 
