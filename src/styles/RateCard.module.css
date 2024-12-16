@@ -8,25 +8,11 @@
 }
 
 /* Title styling */
-h2 {
+.title {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #333;
-}
-
-/* Filter dropdown */
-.filterContainer {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dropdown {
-  padding: 8px;
-  margin-left: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  font-family: 'Playfair Display', serif; /* More stylish font */
 }
 
 /* Grid layout */
@@ -53,82 +39,43 @@ h2 {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Active card state */
-.card.active {
-  background-color: #c5e1a5;
-  color: #1b5e20;
-}
-
-/* Card header */
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icon {
-  transition: transform 0.3s;
-}
-
-.card.active .icon {
-  transform: rotate(180deg);
+/* Card title */
+.cardTitle {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #00796b;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
 }
 
 /* Tooltip */
 .tooltip {
-  display: none;
-  background-color: #333;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  position: absolute;
-  top: -30px;
-  right: 10px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-.card:hover .tooltip {
-  display: block;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif; /* Clean font for tooltips */
+  color: #666;
+  margin-bottom: 15px;
 }
 
 /* Details styles */
 .details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s;
-  opacity: 0;
+  font-size: 1.0rem;
+  font-family: 'Roboto', sans-serif; /* Clean and professional font for details */
+  line-height: 1.0;
+  color: #555;
 }
 
-.detailsExpanded {
-  max-height: 500px; /* Adjust max-height for longer content */
-  opacity: 1;
-}
-
-/* List items */
 .detailItem {
   list-style-type: none;
   padding: 5px 0;
-  color: #555;
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-  animation-delay: calc(var(--order) * 0.1s);
-}
-
-/* Animation for staggered list items */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .card h3 {
-    font-size: 1.3rem;
+  .cardTitle {
+    font-size: 1.4rem;
   }
 
-  .details li {
+  .details {
     font-size: 0.9rem;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/Offerings.module.css';
 
 const offeringsData = [
@@ -25,26 +25,14 @@ const offeringsData = [
 ];
 
 const Offerings = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleCard = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
     <section id="offerings" className={styles.container}>
-      <h2>What I Offer</h2>
+      <h2 className={styles.heading}>What I Offer</h2>
       <div className={styles.grid}>
         {offeringsData.map((offering, index) => (
-          <div
-            key={index}
-            className={`${styles.card} ${activeIndex === index ? styles.active : ''}`}
-            onClick={() => toggleCard(index)}
-          >
-            <h3>{offering.title}</h3>
-            <p className={`${styles.description} ${activeIndex === index ? styles.descriptionExpanded : ''}`}>
-              {offering.description}
-            </p>
+          <div key={index} className={styles.card}>
+            <h3 className={styles.cardTitle}>{offering.title}</h3>
+            <p className={styles.cardDescription}>{offering.description}</p>
           </div>
         ))}
       </div>
