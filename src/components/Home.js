@@ -12,14 +12,14 @@ const Home = () => {
   const images = [profileImage, cop27_1Image, cop28, image5]; 
 
   const sliderSettings = {
-    dots: true, // Enable navigation dots
-    infinite: true, // Infinite scrolling
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Show one slide at a time
-    slidesToScroll: 1, // Scroll one slide at a time
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 3000, // Time between transitions in ms
-    pauseOnHover: true, // Pause autoplay on hover
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
   };
 
   return (
