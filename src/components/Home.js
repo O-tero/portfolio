@@ -5,11 +5,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
 import profileImage from '../assets/profile.jpeg';
 import image2 from '../assets/image2.jpg';
-import image3 from '../assets/image3.jpg';
+import cop28 from '../assets/cop28.jpg';
 import image5 from '../assets/image5.jpg';
 
 const Home = () => {
-  const images = [profileImage, image2, image3, image5]; // Array of image sources
+  const images = [profileImage, image2, cop28, image5]; 
 
   const sliderSettings = {
     dots: true, // Enable navigation dots

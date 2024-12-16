@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from '../styles/MusicMission.module.css';
 import image1 from '../assets/image1.jpg'; 
 import image2 from '../assets/image2.jpg';
-import image3 from '../assets/image3.jpg'; 
+import cop28 from '../assets/cop28.jpg'; 
 import image4 from '../assets/image4.jpg';
 import image5 from '../assets/image5.jpg';
 import image6 from '../assets/image6.jpg';
@@ -68,7 +68,7 @@ const MusicMission = () => {
         <div ref={scrollRef} className={styles.imageContainer}>
           <motion.img src={image1} alt="Music event 1" className={styles.image} variants={fadeInUp} />
           <motion.img src={image2} alt="Music event 2" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image3} alt="Music event 3" className={styles.image} variants={fadeInUp} />
+          <motion.img src={cop28} alt="Music event 3" className={styles.image} variants={fadeInUp} />
           <motion.img src={image4} alt="Music event 4" className={styles.image} variants={fadeInUp} />
           <motion.img src={image5} alt="Music event 5" className={styles.image} variants={fadeInUp} />
           <motion.img src={image6} alt="Music event 6" className={styles.image} variants={fadeInUp} />
