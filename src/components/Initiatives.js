@@ -1,9 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 import styles from '../styles/Initiatives.module.css';
 
 const Initiatives = () => {
-  // Updated content for the carousel
   const initiatives = [
     {
       title: 'Hope You Can See',
@@ -27,18 +26,17 @@ const Initiatives = () => {
   return (
     <section id="initiatives" className={styles.container}>
       <h2 className={styles.heading}>My Initiatives</h2>
-      <div className={styles.carousel}>
-        {initiatives.map((initiative, index) => (
+
+      {initiatives.map((initiative, index) => (
+        <div key={index} className={`${styles.section} ${styles[`section${index + 1}`]}`}>
           <motion.div
-            key={index}
             className={styles.card}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
             <h3>{initiative.title}</h3>
             <p>{initiative.description}</p>
-            {/* Render the link only if it exists */}
             {initiative.link && (
               <a
                 href={initiative.link}
@@ -50,8 +48,8 @@ const Initiatives = () => {
               </a>
             )}
           </motion.div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 };
