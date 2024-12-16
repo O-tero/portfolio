@@ -1,8 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/MusicMission.module.css';
+import AUNYC_2Image from '../assets/AUNYC_2.jpg';
+import AUNYC_3Image from '../assets/AUNYC_3.jpg';
+import AUNYC_4Image from '../assets/AUNYC_4.jpg';
 import image1 from '../assets/image1.jpg'; 
 import image2 from '../assets/image2.jpg';
+import cop27_1Image from '../assets/cop27_1.jpg';
+import cop27_5Image from '../assets/cop27_5.jpg';
 import cop28 from '../assets/cop28.jpg'; 
 import image4 from '../assets/image4.jpg';
 import image5 from '../assets/image5.jpg';
@@ -26,16 +31,29 @@ const fadeInUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
+const imageArray = [
+  AUNYC_2Image, AUNYC_3Image, AUNYC_4Image, image1, image2, cop27_1Image, cop27_5Image, cop28, image4, image5, image6, image7, image8, image9
+];
+
 const MusicMission = () => {
   const scrollRef = useRef(null);
 
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+  const scrollToNextImage = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const scrollAmount = container.clientWidth; 
+      if (container.scrollLeft + scrollAmount >= container.scrollWidth) {
+        container.scrollTo({ left: 0, behavior: 'smooth' }); 
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
   };
 
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 200, behavior: 'smooth' });
-  };
+  useEffect(() => {
+    const interval = setInterval(scrollToNextImage, 3000); 
+    return () => clearInterval(interval); 
+  }, []);
 
   return (
     <motion.div
@@ -62,21 +80,19 @@ const MusicMission = () => {
         our time.
       </motion.p>
 
-      {/* Image Section with Sideways Scrolling */}
+      {/* Image Section with Automatic Scrolling */}
       <div className={styles.imageScrollContainer}>
-        <button onClick={scrollLeft} className={styles.scrollButton}>&lt;</button>
         <div ref={scrollRef} className={styles.imageContainer}>
-          <motion.img src={image1} alt="Music event 1" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image2} alt="Music event 2" className={styles.image} variants={fadeInUp} />
-          <motion.img src={cop28} alt="Music event 3" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image4} alt="Music event 4" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image5} alt="Music event 5" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image6} alt="Music event 6" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image7} alt="Music event 7" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image8} alt="Music event 8" className={styles.image} variants={fadeInUp} />
-          <motion.img src={image9} alt="Music event 9" className={styles.image} variants={fadeInUp} />
+          {imageArray.map((image, index) => (
+            <motion.img
+              key={index}
+              src={image}
+              alt={`Music event ${index + 1}`}
+              className={styles.image}
+              variants={fadeInUp}
+            />
+          ))}
         </div>
-        <button onClick={scrollRight} className={styles.scrollButton}>&gt;</button>
       </div>
     </motion.div>
   );

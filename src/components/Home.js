@@ -1,15 +1,15 @@
 import React from 'react';
-import Slider from 'react-slick'; // Import the react-slick slider
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from '../styles/Home.module.css';
 import profileImage from '../assets/profile.jpeg';
-import image2 from '../assets/image2.jpg';
+import cop27_1Image from '../assets/cop27_1.jpg';
 import cop28 from '../assets/cop28.jpg';
 import image5 from '../assets/image5.jpg';
 
 const Home = () => {
-  const images = [profileImage, image2, cop28, image5]; 
+  const images = [profileImage, cop27_1Image, cop28, image5]; 
 
   const sliderSettings = {
     dots: true, // Enable navigation dots

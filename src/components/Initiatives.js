@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Importing Framer Motion for animations
+import { motion } from 'framer-motion'; 
 import styles from '../styles/Initiatives.module.css';
 
 const Initiatives = () => {
@@ -38,15 +38,17 @@ const Initiatives = () => {
           >
             <h3>{initiative.title}</h3>
             <p>{initiative.description}</p>
-            {/* Adding the clickable link */}
-            <a
-              href={initiative.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >
-              Visit Initiative
-            </a>
+            {/* Render the link only if it exists */}
+            {initiative.link && (
+              <a
+                href={initiative.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                Visit Initiative
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
