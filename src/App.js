@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import MusicMission from './components/MusicMission';
@@ -16,27 +16,29 @@ const App = () => {
     <Router>
       <div className={styles.mainContainer}>
         <Navbar />
-      
-      
         <div className={styles.contentWrapper}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/music-mission" element={<MusicMission />} />
-            <Route path="/achievements" element={<Achievements />} />
-            <Route path="/initiatives" element={<Initiatives />} />
-            <Route path="/offerings" element={<Offerings />} />
-            <Route path="/rate-card" element={<RateCard />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <section id="home">
+            <Home />
+          </section>
+          <section id="music-mission">
+            <MusicMission />
+          </section>
+          <section id="achievements">
+            <Achievements />
+          </section>
+          <section id="initiatives">
+            <Initiatives />
+          </section>
+          <section id="offerings">
+            <Offerings />
+          </section>
+          <section id="rate-card">
+            <RateCard />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
         </div>
-        <Achievements />
-        <Initiatives />
-        <MusicMission />
-        <RateCard />
-        <Offerings />
-<Contact />
-
-        
         <Footer />
       </div>
     </Router>
