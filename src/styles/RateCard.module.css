@@ -5,6 +5,7 @@
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Title styling */
@@ -12,7 +13,7 @@
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #333;
-  font-family: 'Playfair Display', serif; /* More stylish font */
+  font-family: 'Poppins', sans-serif;/* More stylish font */
 }
 
 /* Grid layout */
@@ -44,7 +45,7 @@
   font-size: 1.4rem;
   margin-bottom: 10px;
   color: #00796b;
-  font-family: 'Merriweather', serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
@@ -59,7 +60,7 @@
 /* Details styles */
 .details {
   font-size: 1.0rem;
-  font-family: 'Roboto', sans-serif; /* Clean and professional font for details */
+  font-family: 'Poppins', sans-serif; /* Clean and professional font for details */
   line-height: 1.0;
   color: #555;
 }

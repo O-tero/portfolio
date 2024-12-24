@@ -6,8 +6,10 @@
   padding: 40px 20px;
   background-color: rgba(244, 244, 244, 0.95);
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px
+   25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Heading styles */
