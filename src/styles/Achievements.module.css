@@ -22,8 +22,8 @@ h2 {
 }
 
 .achievementItem {
-  margin: 40px 0; /* Increase margin */
-  padding: 20px; /* Increase padding */
+  margin: 20px 0; /* Reduced margin */
+  padding: 10px; /* Reduced padding */
 }
 
 .achievementContent {

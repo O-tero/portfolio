@@ -41,7 +41,6 @@ const achievementsList = [
     description: 'African Climate Weeks 2022 (Libreville, Gabon), 2023 (Nairobi, Kenya), and numerous other global platforms. Hosted a side event at Africa climate week of 2023 “ Hope You Can See” together with other african youth leaders to highlight the role of the youth in the climate justice movement and use of art as a medium to call for action.',
   }
 ];
-
 const Achievements = () => {
   const [imageIndices, setImageIndices] = useState(() =>
     achievementsList.map(() => 0)

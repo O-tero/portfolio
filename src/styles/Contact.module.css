@@ -3,7 +3,7 @@
   background-color: #f0f4f8;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -22,12 +22,19 @@
   line-height: 1.6;
 }
 
+.contactContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
 .contactInfo {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
-  margin-bottom: 40px;
 }
 
 .infoItem {
@@ -54,8 +61,21 @@
   text-decoration: underline;
 }
 
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profileImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .socialSection {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .followText {
@@ -95,12 +115,13 @@
     font-size: 1rem;
   }
 
-  .infoItem {
-    font-size: 0.95rem;
+  .contactContent {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .socialLink {
-    font-size: 1.6rem;
+  .profileImage {
+    max-width: 300px;
   }
 }
 
