@@ -1,3 +1,4 @@
+/* General container styles */
 .container {
   width: 100%;
   padding: 20px 40px;
@@ -29,12 +30,14 @@ h2 {
 .achievementContent {
   display: flex;
   align-items: center;
-  height: 100vh; /* Make each achievement fill the page */
+  height: auto; /* Adjust height for better responsiveness */
+  flex-direction: column; /* Stack items vertically on small screens */
 }
 
 .achievementText {
   flex: 1;
   text-align: left;
+  margin-bottom: 20px; /* Add margin for spacing */
 }
 
 .achievementTitle {
@@ -60,8 +63,9 @@ h2 {
 }
 
 .achievementImage {
-  width: 400px; /* Increase image size */
-  height: 400px; /* Increase image size */
+  width: 100%;
+  max-width: 400px; /* Set max width for better responsiveness */
+  height: auto; /* Adjust height for better responsiveness */
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -100,14 +104,30 @@ h2 {
   .achievementItem {
     padding: 10px;
   }
+  .achievementContent {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
   .achievementTitle {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
   .achievementDescription {
     font-size: 1rem;
   }
   .achievementImage {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 300px; /* Adjust max width for smaller screens */
+    height: auto; /* Adjust height for better responsiveness */
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementTitle {
+    font-size: 1.2rem;
+  }
+  .achievementDescription {
+    font-size: 0.9rem;
+  }
+  .achievementImage {
+    max-width: 250px; /* Adjust max width for smaller screens */
   }
 }

@@ -18,7 +18,11 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = !isOpen ? 'hidden' : 'visible';
+  };
 
   const renderNavLinks = () => (
     <>
@@ -63,7 +67,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <ScrollLink to="home" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="home" smooth={true} duration={500} onClick={() => setIsOpen(false)}>
           Jesse David
         </ScrollLink>
       </div>
@@ -73,10 +77,13 @@ const Navbar = () => {
         </ul>
       ) : (
         <>
-          <div className={styles.hamburger} onClick={toggleMenu}>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
+          <div 
+            className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
+            onClick={toggleMenu}
+          >
+            <div className={styles.bar}></div>
+            <div className={styles.bar}></div>
+            <div className={styles.bar}></div>
           </div>
           <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}>
             <ul className={styles.mobileNavLinks}>{renderNavLinks()}</ul>

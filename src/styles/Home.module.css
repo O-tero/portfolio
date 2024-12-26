@@ -1,34 +1,48 @@
 /* Container for the home section */
 .container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Poppins';
+}
+
+/* Individual slide styles */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Image styles */
+.image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Overlay styles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
   padding: 20px;
-  color: white;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
-  font-family: 'Poppins', sans-serif;
 }
+
+/* Text container styles */
 .textContainer {
   max-width: 600px;
   padding-top: 150px;
+  color: white;
 }
 
-/* Animation for heading appearance */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Style for the main heading */
+/* Heading styles */
 .heading {
   font-size: 2.5rem;
   font-weight: bold;
@@ -42,70 +56,15 @@
   font-weight: bold;
   line-height: 1.6;
   color: rgb(241, 243, 245);
-  font-size: 20px;
-
-}
-
-/* Container for the slider */
-.sliderContainer {
-  width: 100%; /* Full width for the slider */
-  max-width: 300px; /* Restrict the size of the slider */
-  margin: 20px auto; /* Center it horizontally */
-  overflow: hidden; /* Ensures no extra space outside the slider */
-}
-
-/* Slider image styles */
-.sliderImage {
-  width: 100px; /* Set the image width to 100px */
-  height: 100px; /* Set the image height to 100px */
-  object-fit: cover; /* Ensures the image maintains its aspect ratio while fitting the size */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Flex container for icons */
-.iconContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  gap: 20px;
-  margin: 20px 0;
-}
-
-/* Icon image styles */
-.iconImage {
-  width: 80px; /* Icon size */
-  height: 80px;
-  object-fit: cover; /* Ensures aspect ratio */
-  border-radius: 50%; /* Makes the icons round */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px 10px;
-    height: auto; /* Allow height to adjust dynamically */
-  }
-
   .heading {
     font-size: 2rem;
   }
 
   .description {
     font-size: 1rem;
-    padding: 0 15px;
-  }
-
-  /* Slider image size on smaller screens */
-  .sliderImage {
-    width: 70px;
-    height: 70px;
-  }
-
-  /* Icon image size on smaller screens */
-  .iconImage {
-    width: 60px;
-    height: 60px;
   }
 }

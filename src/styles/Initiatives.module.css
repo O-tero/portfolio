@@ -118,20 +118,44 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .timeline::after {
+    left: 20px; /* Move the timeline line to the left */
+  }
+
   .timelineItem {
     width: 100%;
+    padding-left: 40px; /* Add padding to the left */
+    padding-right: 20px; /* Reduce padding on the right */
     left: 0;
     transform: translateX(0);
   }
 
+  .timelineItem:nth-child(odd),
   .timelineItem:nth-child(even) {
     left: 0;
     transform: translateX(0);
   }
 
   .timelineContent::after {
+    left: -12.5px;
     right: auto;
-    left: 50%;
-    margin-left: -12.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .timelineItem {
+    padding-left: 20px; /* Reduce padding on the left */
   }
 }

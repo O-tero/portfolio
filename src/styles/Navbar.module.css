@@ -1,3 +1,4 @@
+/* General navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,7 +20,7 @@
 
 .logo a {
   font-size: 1rem; /* Smaller logo text */
-  color: #20A4F3; /* Bright blue color */
+  color: #edf1f3; /* Bright blue color */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -53,43 +54,85 @@
   color: #f0f0f0;
 }
 
+/* Hamburger menu styles */
 .hamburger {
   display: none;
   cursor: pointer;
   flex-direction: column;
-  gap: 3px; /* Reduced gap */
+  gap: 6px;
+  padding: 4px;
+  z-index: 300;
 }
 
 .bar {
-  width: 20px; /* Reduced width */
-  height: 2px; /* Reduced height */
+  width: 25px;
+  height: 3px;
   background-color: white;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-.barActive {
-  background-color: #f0f0f0;
+/* Hamburger animation when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile menu styles */
 .mobileMenu {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 40px; /* Adjust to match new navbar height */
+  position: fixed;
+  top: 40px; /* Match navbar height */
   left: 0;
   width: 100%;
-  background-color: #808080;
-  padding: 10px 0; /* Reduced padding */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  height: calc(100vh - 40px);
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 20px;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .mobileMenu.open {
-  display: flex;
+  transform: translateX(0);
+  display: block;
 }
 
-.navLinks.active {
-  top: 40px; /* Adjust to match new navbar height */
+.mobileNavLinks {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.mobileNavLinks li {
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileNavLinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.mobileNavLinks a:hover {
+  color: #20A4F3;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
@@ -100,14 +143,8 @@
   .hamburger {
     display: flex;
   }
-}
 
-@media (max-width: 480px) {
-  .navLinks.active {
-    font-size: 0.85rem; /* Reduced font size */
-  }
-
-  .logo {
-    font-size: 0.9rem; /* Reduced font size */
+  .mobileMenu {
+    display: block;
   }
 }
