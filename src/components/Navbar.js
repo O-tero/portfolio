@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import styles from '../styles/Navbar.module.css';
-import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,44 +18,48 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    // Prevent scrolling when menu is open
+    document.body.style.overflow = !isOpen ? 'hidden' : 'visible';
+  };
 
   const renderNavLinks = () => (
     <>
       <li>
-        <Link to="/" className={location.pathname === '/' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="home" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           Home
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/music-mission" className={location.pathname === '/music-mission' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="music-mission" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           Music with a Mission
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/achievements" className={location.pathname === '/achievements' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="achievements" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           Key Achievements
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/initiatives" className={location.pathname === '/initiatives' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="initiatives" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           My Initiatives
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/offerings" className={location.pathname === '/offerings' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="offerings" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           What I Offer
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/rate-card" className={location.pathname === '/rate-card' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="rate-card" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           Rate Card
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link to="/contact" className={location.pathname === '/contact' ? styles.active : ''} onClick={() => setIsOpen(false)}>
+        <ScrollLink to="contact" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
           Contact
-        </Link>
+        </ScrollLink>
       </li>
     </>
   );
@@ -64,7 +67,9 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Link to="/">Jesse David</Link>
+        <ScrollLink to="home" smooth={true} duration={500} onClick={() => setIsOpen(false)}>
+          Jesse David
+        </ScrollLink>
       </div>
       {!isMobile ? (
         <ul className={styles.navLinks}>
@@ -72,10 +77,13 @@ const Navbar = () => {
         </ul>
       ) : (
         <>
-          <div className={styles.hamburger} onClick={toggleMenu}>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
-            <div className={`${styles.bar} ${isOpen ? styles.barActive : ''}`}></div>
+          <div 
+            className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
+            onClick={toggleMenu}
+          >
+            <div className={styles.bar}></div>
+            <div className={styles.bar}></div>
+            <div className={styles.bar}></div>
           </div>
           <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}>
             <ul className={styles.mobileNavLinks}>{renderNavLinks()}</ul>

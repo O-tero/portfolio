@@ -49,8 +49,10 @@ const RateCard = () => {
       <div className={styles.grid}>
         {rateCardData.map((item, index) => (
           <div key={index} className={styles.card}>
-            <h3 className={styles.cardTitle}>{item.title}</h3>
-            <p className={styles.tooltip}>{item.tooltip}</p>
+            <div className={styles.cardHeader}>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.tooltip}>{item.tooltip}</p>
+            </div>
             <ul className={styles.details}>
               {item.details.map((detail, i) => (
                 <li key={i} className={styles.detailItem}>
@@ -58,6 +60,7 @@ const RateCard = () => {
                 </li>
               ))}
             </ul>
+            <button className={styles.contactButton}>Contact Me</button>
           </div>
         ))}
       </div>

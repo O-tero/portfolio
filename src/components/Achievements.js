@@ -15,7 +15,6 @@ import image4 from '../assets/image4.jpg';
 import NSC_1Image from '../assets/NSC_1.jpg';
 import NSC_2Image from '../assets/NSC_2.jpg';
 
-
 const achievementsList = [
   {
     title: 'African United Nations Youth Fellow 2024',
@@ -42,12 +41,26 @@ const achievementsList = [
     description: 'African Climate Weeks 2022 (Libreville, Gabon), 2023 (Nairobi, Kenya), and numerous other global platforms. Hosted a side event at Africa climate week of 2023 “ Hope You Can See” together with other african youth leaders to highlight the role of the youth in the climate justice movement and use of art as a medium to call for action.',
   }
 ];
-
 const Achievements = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [imageIndices, setImageIndices] = useState(() =>
+    achievementsList.map(() => 0)
+  );
 
-  const toggleAchievement = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const nextImage = (achievementIndex, images) => {
+    setImageIndices((prev) => {
+      const newIndices = [...prev];
+      newIndices[achievementIndex] = (prev[achievementIndex] + 1) % images.length;
+      return newIndices;
+    });
+  };
+
+  const prevImage = (achievementIndex, images) => {
+    setImageIndices((prev) => {
+      const newIndices = [...prev];
+      newIndices[achievementIndex] =
+        (prev[achievementIndex] - 1 + images.length) % images.length;
+      return newIndices;
+    });
   };
 
   return (
@@ -55,28 +68,37 @@ const Achievements = () => {
       <h2>Key Achievements</h2>
       <ul className={styles.achievementList}>
         {achievementsList.map((achievement, index) => (
-          <li
-            key={index}
-            className={styles.achievementItem}
-            onClick={() => toggleAchievement(index)}
-          >
-            <div className={styles.achievementTitle}>{achievement.title}</div>
-            <div className={`${styles.achievementDescription} ${expandedIndex === index ? styles.expanded : ''}`}>
-              {achievement.description}
-            </div>
-            {expandedIndex === index && achievement.images && (
-              <div className={styles.achievementImageContainer}>
-                {achievement.images.map((image, imgIndex) => (
-                  <img
-                      key={imgIndex}
-                      src={image}
-                      alt={`${achievement.title} - ${imgIndex + 1}`}
-                      className={styles.achievementImage}
-                  />
-                ))}
-
+          <li key={index} className={styles.achievementItem}>
+            <div
+              className={styles.achievementContent}
+              style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
+            >
+              <div className={styles.achievementText}>
+                <div className={styles.achievementTitle}>{achievement.title}</div>
+                <div className={styles.achievementDescription}>
+                  {achievement.description}
+                </div>
               </div>
-            )}
+              {achievement.images && (
+                <div className={styles.achievementImageContainer}>
+                  <img
+                    src={achievement.images[imageIndices[index]]}
+                    alt={`${achievement.title} - ${imageIndices[index] + 1}`}
+                    className={styles.achievementImage}
+                  />
+                  {achievement.images.length > 1 && (
+                    <div className={styles.imageNavigation}>
+                      <button onClick={() => prevImage(index, achievement.images)}>
+                        ←
+                      </button>
+                      <button onClick={() => nextImage(index, achievement.images)}>
+                        →
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ul>

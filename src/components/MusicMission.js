@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/MusicMission.module.css';
 import AUNYC_2Image from '../assets/AUNYC_2.jpg';
@@ -36,25 +36,6 @@ const imageArray = [
 ];
 
 const MusicMission = () => {
-  const scrollRef = useRef(null);
-
-  const scrollToNextImage = () => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const scrollAmount = container.clientWidth; 
-      if (container.scrollLeft + scrollAmount >= container.scrollWidth) {
-        container.scrollTo({ left: 0, behavior: 'smooth' }); 
-      } else {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(scrollToNextImage, 3000); 
-    return () => clearInterval(interval); 
-  }, []);
-
   return (
     <motion.div
       className={styles.container}
@@ -80,19 +61,13 @@ const MusicMission = () => {
         our time.
       </motion.p>
 
-      {/* Image Section with Automatic Scrolling */}
-      <div className={styles.imageScrollContainer}>
-        <div ref={scrollRef} className={styles.imageContainer}>
-          {imageArray.map((image, index) => (
-            <motion.img
-              key={index}
-              src={image}
-              alt={`Music event ${index + 1}`}
-              className={styles.image}
-              variants={fadeInUp}
-            />
-          ))}
-        </div>
+      {/* Image Gallery */}
+      <div className={styles.gallery}>
+        {imageArray.map((image, index) => (
+          <motion.div key={index} className={styles.galleryItem} variants={fadeInUp}>
+            <img src={image} alt={`Music event ${index + 1}`} className={styles.image} />
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   );

@@ -1,87 +1,144 @@
-/* Container styling */
 .container {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  padding: 60px 40px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
 
-h2 {
-  color: #333;
-  margin-bottom: 10px;
+.title {
+  font-size: 2.8rem;
+  color: #333333;
+  margin-bottom: 20px;
 }
 
-p {
-  color: #555;
-  margin: 10px 0;
+.subtitle {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-/* Contact Info Section */
+.contactContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
 .contactInfo {
-  display: block; /* Show by default on larger screens */
-  transition: all 0.3s ease-in-out;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
 }
 
-.contactInfo.expanded {
-  display: block; /* Show when expanded on smaller screens */
+.infoItem {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #444444;
 }
 
-a {
-  color: #808080;
+.icon {
+  margin-right: 10px;
+  color: #00796b;
+  font-size: 1.2rem;
+}
+
+.link {
+  color: #00796b;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #004999;
+.link:hover {
+  color: #005c56;
   text-decoration: underline;
 }
 
-/* Toggle Button */
-.toggleButton {
-  background-color: #808080;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 15px 0;
-  display: none; /* Hidden on larger screens */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-/* Social Links */
+.profileImage {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.socialSection {
+  margin-top: 40px;
+}
+
+.followText {
+  font-size: 1rem;
+  color: #555555;
+  margin-bottom: 15px;
+}
+
 .socialLinks {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
 }
 
-.socialLinks a {
-  font-size: 1.2em;
-  transition: transform 0.2s;
+.socialLink {
+  color: #555555;
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.socialLinks a:hover {
-  color: #808080;
+.socialLink:hover {
+  color: #00796b;
   transform: scale(1.1);
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .toggleButton {
-    display: inline-block; /* Visible on smaller screens */
+  .container {
+    padding: 40px 20px;
   }
 
-  .contactInfo {
-    display: none; /* Hidden by default on smaller screens */
+  .title {
+    font-size: 2.2rem;
   }
 
-  .contactInfo.expanded {
-    display: block; /* Show expanded info on click */
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .contactContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profileImage {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .infoItem {
+    font-size: 0.9rem;
+  }
+
+  .socialLink {
+    font-size: 1.4rem;
   }
 }

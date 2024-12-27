@@ -26,30 +26,32 @@ const Initiatives = () => {
   return (
     <section id="initiatives" className={styles.container}>
       <h2 className={styles.heading}>My Initiatives</h2>
-
-      {initiatives.map((initiative, index) => (
-        <div key={index} className={`${styles.section} ${styles[`section${index + 1}`]}`}>
+      <div className={styles.timeline}>
+        {initiatives.map((initiative, index) => (
           <motion.div
-            className={styles.card}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            key={index}
+            className={styles.timelineItem}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <h3>{initiative.title}</h3>
-            <p>{initiative.description}</p>
-            {initiative.link && (
-              <a
-                href={initiative.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
-                Visit Initiative
-              </a>
-            )}
+            <div className={styles.timelineContent}>
+              <h3 className={styles.title}>{initiative.title}</h3>
+              <p className={styles.description}>{initiative.description}</p>
+              {initiative.link && (
+                <a
+                  href={initiative.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  Visit Initiative
+                </a>
+              )}
+            </div>
           </motion.div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,9 +1,9 @@
-/* Navbar container */
+/* General navbar styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px; /* Reduced padding */
+  padding: 2px 10px; /* Reduced padding */
   background-color: #808080;
   color: white;
   position: sticky;
@@ -11,15 +11,25 @@
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
+  height: 40px; /* Set fixed height */
 }
 
-/* Logo */
 .logo {
-  font-size: 1rem; /* Reduced size */
-  font-weight: bold;
+  font-size: 0.9rem; /* Smaller logo */
 }
 
-/* Navigation Links */
+.logo a {
+  font-size: 1rem; /* Smaller logo text */
+  color: #edf1f3; /* Bright blue color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #1a8ad1; /* Slightly darker blue on hover */
+}
+
 .navLinks {
   display: flex;
   list-style: none;
@@ -27,78 +37,104 @@
   transition: all 0.3s ease;
 }
 
-/* Hide the navigation links by default on mobile */
-.navLinks.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 45px; /* Reduced top position */
-  left: 0;
-  width: 100%;
-  background-color: #808080;
-  padding: 8px; /* Reduced padding */
-  gap: 8px; /* Reduced gap */
-}
-
-/* Link styles */
 .navLinks li {
-  font-size: 0.9rem; /* Reduced font size */
+  font-size: 0.8rem; /* Smaller nav text */
 }
 
 .navLinks a {
   color: white;
   text-decoration: none;
-  padding: 4px 6px; /* Reduced padding */
+  padding: 2px 6px; /* Reduced padding */
   border-radius: 4px; /* Reduced border radius */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect */
 .navLinks a:hover {
   background-color: #666666;
   color: #f0f0f0;
 }
 
-/* Hamburger Menu for mobile view */
+/* Hamburger menu styles */
 .hamburger {
   display: none;
   cursor: pointer;
   flex-direction: column;
-  gap: 3px; /* Reduced gap */
+  gap: 6px;
+  padding: 4px;
+  z-index: 300;
 }
 
-/* Hamburger bars */
 .bar {
-  width: 20px; /* Reduced width */
-  height: 2px; /* Reduced height */
+  width: 25px;
+  height: 3px;
   background-color: white;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-/* When the mobile menu is active */
-.barActive {
-  background-color: #f0f0f0;
+/* Hamburger animation when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-/* Mobile Menu Container */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile menu styles */
 .mobileMenu {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 45px; /* Reduced top position */
+  position: fixed;
+  top: 40px; /* Match navbar height */
   left: 0;
   width: 100%;
-  background-color: #808080;
-  padding: 10px 0; /* Reduced padding */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  height: calc(100vh - 40px);
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 20px;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .mobileMenu.open {
-  display: flex;
+  transform: translateX(0);
+  display: block;
 }
 
-/* Media Queries for responsiveness */
+.mobileNavLinks {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.mobileNavLinks li {
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileNavLinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.mobileNavLinks a:hover {
+  color: #20A4F3;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;
@@ -107,14 +143,8 @@
   .hamburger {
     display: flex;
   }
-}
 
-@media (max-width: 480px) {
-  .navLinks.active {
-    font-size: 0.85rem; /* Reduced font size */
-  }
-
-  .logo {
-    font-size: 0.9rem; /* Reduced font size */
+  .mobileMenu {
+    display: block;
   }
 }
