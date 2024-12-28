@@ -31,7 +31,14 @@ h2 {
   display: flex;
   align-items: center;
   height: auto; /* Adjust height for better responsiveness */
-  flex-direction: column; /* Stack items vertically on small screens */
+}
+
+.leftImage {
+  flex-direction: row; /* Image on the left */
+}
+
+.rightImage {
+  flex-direction: row-reverse; /* Image on the right */
 }
 
 .achievementText {
@@ -112,22 +119,21 @@ h2 {
   }
   .achievementDescription {
     font-size: 1rem;
+    text-align: center; /* Center align the text */
+    width: 100%; /* Ensure description covers the width of the screen */
   }
   .achievementImage {
     width: 100%;
-    max-width: 300px; /* Adjust max width for smaller screens */
+    max-width: 100%; /* Ensure the image covers the width of the screen */
     height: auto; /* Adjust height for better responsiveness */
   }
-}
-
-@media (max-width: 480px) {
-  .achievementTitle {
-    font-size: 1.2rem;
+  .achievementText {
+    order: 1; /* Ensure text is on top */
+    width: 100%; /* Ensure text covers the width of the screen */
+    text-align: center; /* Center align the text */
   }
-  .achievementDescription {
-    font-size: 0.9rem;
-  }
-  .achievementImage {
-    max-width: 250px; /* Adjust max width for smaller screens */
+  .achievementImageContainer {
+    order: 2; /* Ensure image is below the text */
+    padding: 0; /* Remove padding for full-width image */
   }
 }

@@ -41,6 +41,7 @@ const achievementsList = [
     description: 'African Climate Weeks 2022 (Libreville, Gabon), 2023 (Nairobi, Kenya), and numerous other global platforms. Hosted a side event at Africa climate week of 2023 “ Hope You Can See” together with other african youth leaders to highlight the role of the youth in the climate justice movement and use of art as a medium to call for action.',
   }
 ];
+
 const Achievements = () => {
   const [imageIndices, setImageIndices] = useState(() =>
     achievementsList.map(() => 0)
@@ -70,8 +71,9 @@ const Achievements = () => {
         {achievementsList.map((achievement, index) => (
           <li key={index} className={styles.achievementItem}>
             <div
-              className={styles.achievementContent}
-              style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
+              className={`${styles.achievementContent} ${
+                index % 2 === 0 ? styles.leftImage : styles.rightImage
+              }`}
             >
               <div className={styles.achievementText}>
                 <div className={styles.achievementTitle}>{achievement.title}</div>

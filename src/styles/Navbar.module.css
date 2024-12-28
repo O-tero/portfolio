@@ -85,6 +85,7 @@
 }
 
 /* Mobile menu styles */
+/* Mobile menu styles */
 .mobileMenu {
   display: none;
   position: fixed;
@@ -101,17 +102,23 @@
 
 .mobileMenu.open {
   transform: translateX(0);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileNavLinks {
   list-style: none;
-  padding: 20px;
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .mobileNavLinks li {
@@ -123,9 +130,10 @@
 .mobileNavLinks a {
   color: white;
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
   display: block;
   width: 100%;
+  text-align: center;
   transition: all 0.3s ease;
 }
 

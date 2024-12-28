@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/MusicMission.module.css';
 import AUNYC_2Image from '../assets/AUNYC_2.jpg';
@@ -36,6 +36,12 @@ const imageArray = [
 ];
 
 const MusicMission = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <motion.div
       className={styles.container}
@@ -63,12 +69,20 @@ const MusicMission = () => {
 
       {/* Image Gallery */}
       <div className={styles.gallery}>
-        {imageArray.map((image, index) => (
+        {imageArray.slice(0, showMore ? imageArray.length : 4).map((image, index) => (
           <motion.div key={index} className={styles.galleryItem} variants={fadeInUp}>
             <img src={image} alt={`Music event ${index + 1}`} className={styles.image} />
           </motion.div>
         ))}
       </div>
+
+      <motion.button
+        className={styles.showMoreButton}
+        onClick={handleShowMore}
+        variants={fadeInUp}
+      >
+        {showMore ? 'Show Less' : 'See More'}
+      </motion.button>
     </motion.div>
   );
 };

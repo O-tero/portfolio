@@ -31,7 +31,7 @@ const Footer = () => {
           <h2 className={styles.logo}>Jesse David</h2>
           <p className={styles.tagline}>Climate Justice Advocate & Sustainable Musician</p>
         </div>
-        <div className={styles.linksSection}>
+        {/* <div className={styles.linksSection}>
           <h3 className={styles.sectionTitle}>Quick Links</h3>
           <ul className={styles.linksList}>
             <li><a href="#home" className={styles.link}>Home</a></li>
@@ -42,7 +42,7 @@ const Footer = () => {
             <li><a href="#rate-card" className={styles.link}>Rate Card</a></li>
             <li><a href="#contact" className={styles.link}>Contact</a></li>
           </ul>
-        </div>
+        </div> */}
         <div className={styles.socialSection}>
           <h3 className={styles.sectionTitle}>Follow Me</h3>
           <div className={styles.socialLinks}>
