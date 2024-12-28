@@ -68,6 +68,7 @@
     font-size: 1.2rem; /* Increased font size for better readability */
     text-align: center; /* Center align the text */
     padding: 0 15px; /* Add padding for better spacing */
+    margin: 0 auto; /* Center the text horizontally */
   }
 
   .textContainer {
