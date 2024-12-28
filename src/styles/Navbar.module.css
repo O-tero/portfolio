@@ -85,14 +85,13 @@
 }
 
 /* Mobile menu styles */
-/* Mobile menu styles */
 .mobileMenu {
   display: none;
   position: fixed;
-  top: 40px; /* Match navbar height */
+  top: 0; /* Start at the top of the screen */
   left: 0;
   width: 100%;
-  height: calc(100vh - 40px);
+  height: 100vh; /* Full height */
   background-color: rgba(0, 0, 0, 0.95);
   padding: 0; /* Removed padding to eliminate extra space */
   z-index: 200;
@@ -107,6 +106,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .mobileNavLinks {
   list-style: none;
   padding: 0;
