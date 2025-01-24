@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/Contact.module.css';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import profileImage from '../assets/image5.jpg'; // Make sure to replace with the actual image path
 
 const Contact = () => {
@@ -40,7 +40,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className={styles.socialSection}>
+      {/* <div className={styles.socialSection}>
         <p className={styles.followText}>Follow me on social media for updates:</p>
         <div className={styles.socialLinks}>
           <a href="http://linkedin.com/in/jesse-david-j" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
@@ -53,7 +53,7 @@ const Contact = () => {
             <FaTwitter />
           </a>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
