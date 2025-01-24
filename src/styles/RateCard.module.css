@@ -98,7 +98,7 @@
 
 /* Contact Button */
 .contactButton {
-  padding: 12px 20px;
+  padding: 12px 30px; /* Increased horizontal padding for a longer button */
   background-color: #00796b;
   color: #ffffff;
   border: none;
@@ -106,7 +106,8 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
+  min-width: 150px; /* Set a minimum width to ensure consistent length */
 }
 
 .contactButton:hover {

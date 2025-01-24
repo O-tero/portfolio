@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/RateCard.module.css';
+import { Link as ScrollLink } from 'react-scroll';
 
 const rateCardData = [
   {
@@ -43,7 +44,7 @@ const rateCardData = [
 const RateCard = () => {
   return (
     <section id="rate-card" className={styles.container}>
-      <h2 className={styles.title}>Rate Card for Events</h2>
+      <h2 className={styles.title}>Rate Card</h2>
 
       {/* Card Grid */}
       <div className={styles.grid}>
@@ -60,7 +61,9 @@ const RateCard = () => {
                 </li>
               ))}
             </ul>
-            <button className={styles.contactButton}>Contact Me</button>
+            <ScrollLink to="contact" smooth={true} duration={500}>
+      <button className={styles.contactButton}>Contact Me</button>
+    </ScrollLink>
           </div>
         ))}
       </div>

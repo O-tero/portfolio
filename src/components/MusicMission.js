@@ -12,7 +12,7 @@ import cop28 from '../assets/cop28.jpg';
 import image4 from '../assets/image4.jpg';
 import image5 from '../assets/image5.jpg';
 import image6 from '../assets/image6.jpg';
-import image7 from '../assets/image7.jpg';
+// import image7 from '../assets/image7.jpg';
 import image8 from '../assets/image8.jpeg';
 import image9 from '../assets/image9.jpg';
 
@@ -31,8 +31,80 @@ const fadeInUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-const imageArray = [
-  AUNYC_2Image, AUNYC_3Image, AUNYC_4Image, image1, image2, cop27_1Image, cop27_5Image, cop28, image4, image5, image6, image7, image8, image9
+// const imageArray = [
+//   AUNYC_2Image, AUNYC_3Image, AUNYC_4Image, image1, image2, cop27_1Image, cop27_5Image, cop28, image4, image5, image6, image8, image9
+// ];
+const imageData = [
+  {
+    img: AUNYC_2Image,
+    description: 'African United Nations Youth Conference - Engaging with fellow youth leaders on climate action initiatives',
+    location: 'United Nations Headquarters, New York'
+  },
+  {
+    img: AUNYC_3Image,
+    description: 'Collaborative session with international youth advocates discussing sustainable development',
+    location: 'UN Climate Conference'
+  },
+  {
+    img: AUNYC_4Image,
+    description: 'Youth leadership summit focusing on environmental sustainability',
+    location: 'AUNYC Summit 2024'
+  },
+  {
+    img: image1,
+    description: 'Performance at global climate action event',
+    location: 'Climate Action Summit'
+  },
+  {
+    img: image2,
+    description: 'Musical performance advocating for climate justice',
+    location: 'Environmental Conference'
+  },
+  {
+    img: cop27_1Image,
+    description: 'COP27 Performance - "Hope You Can See" debut',
+    location: 'Sharm El Sheikh, Egypt'
+  },
+  {
+    img: cop27_5Image,
+    description: 'Climate Justice Torch Campaign',
+    location: 'COP27, Egypt'
+  },
+  {
+    img: cop28,
+    description: 'Keep Your Promise Campaign Performance',
+    location: 'COP28, Dubai'
+  },
+  {
+    img: image4,
+    description:"music",
+    location: 'Nairobi Kenya'
+  },
+  {
+    img: image5,
+    description:"music",
+    location: 'Nairobi Kenya'
+  },
+  {
+    img: image6,
+    description:"music",
+    location: 'Nairobi Kenya'
+  },
+  {
+    img: image8,
+    description:"music",
+    location: 'Nairobi Kenya'
+  },
+  {
+    img:image9,
+    description:"music",
+    location:'Nairobi Kenya'
+  },
+
+  
+
+
+  
 ];
 
 const MusicMission = () => {
@@ -69,12 +141,16 @@ const MusicMission = () => {
 
       {/* Image Gallery */}
       <div className={styles.gallery}>
-        {imageArray.slice(0, showMore ? imageArray.length : 4).map((image, index) => (
-          <motion.div key={index} className={styles.galleryItem} variants={fadeInUp}>
-            <img src={image} alt={`Music event ${index + 1}`} className={styles.image} />
-          </motion.div>
-        ))}
+  {imageData.slice(0, showMore ? imageData.length : 4).map((item, index) => (
+    <motion.div key={index} className={styles.galleryItem} variants={fadeInUp}>
+      <img src={item.img} alt={`Music event ${index + 1}`} className={styles.image} />
+      <div className={styles.imageOverlay}>
+        <p className={styles.imageDescription}>{item.description}</p>
+        <p className={styles.imageLocation}>{item.location}</p>
       </div>
+    </motion.div>
+  ))}
+</div>
 
       <motion.button
         className={styles.showMoreButton}

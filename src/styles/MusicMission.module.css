@@ -27,16 +27,22 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increased minmax width */
+  gap: 30px; /* Increased gap between items */
+  margin: 30px 0; /* Added vertical margin */
+  padding: 0 15px; /* Added horizontal padding */
 }
 
 .galleryItem {
+  position: relative;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+  height: 300px;
+  margin: auto;
+  max-width: 400px;
 }
 
 .galleryItem:hover {
@@ -46,8 +52,18 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* This ensures images cover the entire container */
   display: block;
+}
+.imageOverlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  color: white;
+  transition: bottom 0.3s ease-in-out;
 }
 
 .showMoreButton {
@@ -62,6 +78,21 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.galleryItem:hover .imageOverlay {
+  bottom: 0;
+}
+
+.imageDescription {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.imageLocation {
+  font-size: 0.8rem;
+  color: #20A4F3;
+  font-style: italic;
+}
 
 .showMoreButton:hover {
   background-color: #005c56;
@@ -69,6 +100,17 @@
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
+  .imageOverlay {
+    padding: 15px;
+  }
+  
+  .imageDescription {
+    font-size: 0.8rem;
+  }
+  
+  .imageLocation {
+    font-size: 0.7rem;
+  }
   .container {
     padding: 20px 10px;
   }
@@ -79,6 +121,15 @@
 
   .text {
     font-size: 0.9rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .galleryItem {
+    height: 250px;
   }
 }
 
