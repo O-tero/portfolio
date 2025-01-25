@@ -49,7 +49,7 @@ const Footer = () => {
             <a href="http://linkedin.com/in/jesse-david-j" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
               <FaLinkedin />
             </a>
-            <a href="https://instagram.com/jesse_david_j" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+            <a href="https://www.instagram.com/jesse_david_j/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
               <FaInstagram />
             </a>
             <a href="https://twitter.com/jesse_david_j" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
-import styles from '../styles/Navbar.module.css';
+import React, { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,50 +14,103 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     // Prevent scrolling when menu is open
-    document.body.style.overflow = !isOpen ? 'hidden' : 'visible';
+    document.body.style.overflow = !isOpen ? "hidden" : "visible";
   };
 
   const renderNavLinks = () => (
     <>
       <li>
-        <ScrollLink to="home" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="home"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           Home
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="music-mission" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="music-mission"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           Music with a Mission
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="achievements" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="achievements"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           Key Achievements
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="initiatives" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="initiatives"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           My Initiatives
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="offerings" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="music"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
+          Music
+        </ScrollLink>
+      </li>
+      <li>
+        <ScrollLink
+          to="offerings"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           What I Offer
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="rate-card" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="rate-card"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           Rate Card
         </ScrollLink>
       </li>
       <li>
-        <ScrollLink to="contact" smooth={true} duration={500} className={styles.link} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="contact"
+          smooth={true}
+          duration={500}
+          className={styles.link}
+          onClick={() => setIsOpen(false)}
+        >
           Contact
         </ScrollLink>
       </li>
@@ -67,25 +120,28 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <ScrollLink to="home" smooth={true} duration={500} onClick={() => setIsOpen(false)}>
+        <ScrollLink
+          to="home"
+          smooth={true}
+          duration={500}
+          onClick={() => setIsOpen(false)}
+        >
           Jesse David
         </ScrollLink>
       </div>
       {!isMobile ? (
-        <ul className={styles.navLinks}>
-          {renderNavLinks()}
-        </ul>
+        <ul className={styles.navLinks}>{renderNavLinks()}</ul>
       ) : (
         <>
-          <div 
-            className={`${styles.hamburger} ${isOpen ? styles.active : ''}`} 
+          <div
+            className={`${styles.hamburger} ${isOpen ? styles.active : ""}`}
             onClick={toggleMenu}
           >
             <div className={styles.bar}></div>
             <div className={styles.bar}></div>
             <div className={styles.bar}></div>
           </div>
-          <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ''}`}>
+          <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
             <ul className={styles.mobileNavLinks}>{renderNavLinks()}</ul>
           </div>
         </>

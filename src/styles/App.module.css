@@ -50,9 +50,19 @@ a:hover {
 .mainContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.contentWrapper {
-  flex: 1; /* Fills available space to push footer down */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

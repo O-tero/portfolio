@@ -1,0 +1,94 @@
+.container {
+  padding: 60px 40px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Poppins';
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.musicGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.musicCard {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.musicCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.featureLink {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00796b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.featureLink:hover {
+  background-color: #005c56;
+}
+
+.mainSong {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .musicGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mainSong {
+    grid-column: span 1;
+  }
+}

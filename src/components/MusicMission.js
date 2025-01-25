@@ -37,7 +37,7 @@ const fadeInUp = {
 const imageData = [
   {
     img: AUNYC_2Image,
-    description: 'African United Nations Youth Conference - Engaging with fellow youth leaders on climate action initiatives',
+    description: 'African United Nations Youth Fellow 2024',
     location: 'United Nations Headquarters, New York'
   },
   {
@@ -77,27 +77,27 @@ const imageData = [
   },
   {
     img: image4,
-    description:"music",
-    location: 'Nairobi Kenya'
+    description:"United Nation Climate Conference -COP28 ",
+    location: 'Dubai'
   },
   {
     img: image5,
-    description:"music",
-    location: 'Nairobi Kenya'
+    description:"Africa climate week of 2023",
+    location: 'Libreville, Gabon'
   },
   {
     img: image6,
-    description:"music",
+    description:"African Climate Weeks 2022 ",
     location: 'Nairobi Kenya'
   },
   {
     img: image8,
-    description:"music",
+    description:"African Climate Weeks 2022",
     location: 'Nairobi Kenya'
   },
   {
     img:image9,
-    description:"music",
+    description:"African Climate Weeks 2022",
     location:'Nairobi Kenya'
   },
 
