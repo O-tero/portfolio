@@ -28,9 +28,10 @@ const Home = () => {
           <div className={styles.overlay}>
             <div className={styles.textContainer}>
               <h1 className={styles.heading}>About Me</h1>
-              <p className={styles.description}>
-                I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024.
-                I blend my passion for environmental justice with the power of music to inspire change.
+              <p className={styles.description}>  
+                I’m Jesse David, an Energy Technology graduate, climate justice advocate, and a sustainable musician. I blend my passion for environmental justice with the power of music to inspire change.
+                My music is a tool for impact, bridging the gap between art and activism, and serving as an anthem for the voices of frontline communities affected by the climate crisis. 
+                Through my journey, I’ve had the privilege of representing African youth on global platforms such as the United Nations Climate Conferences, using the power of music to call for action.
               </p>
             </div>
           </div>
@@ -41,8 +42,9 @@ const Home = () => {
             <div className={styles.textContainer}>
               <h1 className={styles.heading}>About Me</h1>
               <p className={styles.description}>
-                I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024.
-                I blend my passion for environmental justice with the power of music to inspire change.
+                I’m Jesse David, an Energy Technology graduate, climate justice advocate, and a sustainable musician. I blend my passion for environmental justice with the power of music to inspire change.
+                My music is a tool for impact, bridging the gap between art and activism, and serving as an anthem for the voices of frontline communities affected by the climate crisis. 
+                Through my journey, I’ve had the privilege of representing African youth on global platforms such as the United Nations Climate Conferences, using the power of music to call for action.
               </p>
             </div>
           </div>
@@ -52,9 +54,10 @@ const Home = () => {
           <div className={styles.overlay}>
             <div className={styles.textContainer}>
               <h1 className={styles.heading}>About Me</h1>
-              <p className={styles.description}>
-                I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024.
-                I blend my passion for environmental justice with the power of music to inspire change.
+              <p className={styles.description}>       
+                I’m Jesse David, an Energy Technology graduate, climate justice advocate, and a sustainable musician. I blend my passion for environmental justice with the power of music to inspire change.
+                My music is a tool for impact, bridging the gap between art and activism, and serving as an anthem for the voices of frontline communities affected by the climate crisis. 
+                Through my journey, I’ve had the privilege of representing African youth on global platforms such as the United Nations Climate Conferences, using the power of music to call for action.
               </p>
             </div>
           </div>
@@ -65,8 +68,9 @@ const Home = () => {
             <div className={styles.textContainer}>
               <h1 className={styles.heading}>About Me</h1>
               <p className={styles.description}>
-                I’m Jesse David, a climate justice advocate, sustainable musician, and African United Nations Youth Fellow for 2024.
-                I blend my passion for environmental justice with the power of music to inspire change.
+                I’m Jesse David, an Energy Technology graduate, climate justice advocate, and a sustainable musician. I blend my passion for environmental justice with the power of music to inspire change.
+                My music is a tool for impact, bridging the gap between art and activism, and serving as an anthem for the voices of frontline communities affected by the climate crisis. 
+                Through my journey, I’ve had the privilege of representing African youth on global platforms such as the United Nations Climate Conferences, using the power of music to call for action.
               </p>
             </div>
           </div>

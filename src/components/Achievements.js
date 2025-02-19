@@ -23,12 +23,12 @@ const achievementsList = [
   },
   {
     title: 'United Nation Climate Conference - COP27 (Egypt)',
-    description: 'Represented African youth, performed "Hope You Can See," a song that resonated globally with its call for climate justice Through the climate justice torch campaign. Main aim is to amplify the voices of the vulnerable communities at the frontline of the climate crisis to get accountability in the global space. Jesse David was featured in various side events as a climate justice artivist/ speaker using music to call people to action.',
+    description: 'Represented African youth, performed "Hope You Can See," a song that resonated globally with its call for climate justice. Through the climate justice torch campaign by (PACJA). The main aim is to amplify the voices of the vulnerable communities at the frontline of the climate crisis to get accountability in the global space. Jesse David was featured in various side events as a climate justice artivist/speaker using music to call people to action.',
     images: [cop27_1Image, cop27_2Image, cop27_3Image, cop27_4Image, cop27_5Image]
   },
   {
     title: 'United Nation Climate Conference - COP28 (Dubai)',
-    description: 'Championed for global accountability calling for climate action and honoring of commitment through Keep your promise campaign.Urging world leaders to honor their commitments in climate finance and adaptation finance for the global south.Jesse was featured on various platforms including:(Climate Live, extreme hangout and battery tour)',
+    description: 'Championed for global accountability calling for climate action and honoring of commitment through Keep your promise campaign by (PACJA) urging world leaders to honor their commitments in climate finance and adaptation finance for the global South. Jesse was featured on various platforms including:(Climate live, extreme hangout and battery tour).',
     images: [cop28Image, image2, image4]
   },
   {

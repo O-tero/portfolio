@@ -5,7 +5,7 @@ import MusicMission from "./components/MusicMission";
 import Achievements from "./components/Achievements";
 import Initiatives from "./components/Initiatives";
 import Offerings from "./components/Offerings";
-import RateCard from "./components/RateCard";
+// import RateCard from "./components/RateCard";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import styles from "./styles/App.module.css";
@@ -81,9 +81,9 @@ const App = () => {
             </section>
             <section id="offerings">
               <Offerings />
-            </section>
+            {/* </section>
             <section id="rate-card">
-              <RateCard />
+              <RateCard /> */}
             </section>
             <section id="contact">
               <Contact />
