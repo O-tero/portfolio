@@ -37,14 +37,16 @@
 
 /* Text container styles */
 .textContainer {
-  max-width: 600px;
+  width: 90%;
+  max-width: 800px;
   padding-top: 150px;
   color: white;
+  margin: 0 auto;
 }
 
 /* Heading styles */
 .heading {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: bold;
   margin-bottom: 20px;
   color: #20A4F3;
@@ -52,16 +54,31 @@
 
 /* Description paragraph styling */
 .description {
-  font-size: 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
   font-weight: bold;
-  line-height: 1.6;
+  line-height: 1.5;
   color: rgb(241, 243, 245);
+  max-width: 100%;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+  .textContainer {
+    width: 95%;
+    padding-top: 40vh; /* Adjust padding to position text container */
+    text-align: center; /* Center align the text container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .overlay {
+    padding: 1rem;
+  }
+
   .heading {
     font-size: 2rem;
+    text-align: center;
   }
 
   .description {
@@ -71,12 +88,31 @@
     margin: 0 auto; /* Center the text horizontally */
     max-width: 90%; /* Prevent text from overflowing */
   }
+}
 
+/* Additional styles for better tablet responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
   .textContainer {
-    padding-top: 40vh; /* Adjust padding to position text container */
-    text-align: center; /* Center align the text container */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    padding-top: 120px;
+    max-width: 700px;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+  }
+  
+  .description {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ensure landscape mobile devices display properly */
+@media (max-height: 500px) and (orientation: landscape) {
+  .textContainer {
+    padding-top: 80px;
+  }
+  
+  .description {
+    font-size: 1rem;
   }
 }
